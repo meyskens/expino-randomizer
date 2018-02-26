@@ -45,10 +45,10 @@ func doRandom() {
 		},
 	}
 
-	doRequest(data)
+	doRequest([]APIData{data})
 }
 
-func doRequest(data APIData) {
+func doRequest(data []APIData) {
 	r, _ := resty.R().SetBody(data).Post(endpoint + "/metric")
 	fmt.Println(string(r.Body()))
 }
